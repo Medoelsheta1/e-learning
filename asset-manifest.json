@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/e-learning/static/css/main.8cfce32a.css",
+    "main.js": "/e-learning/static/js/main.13d70aee.js",
+    "static/media/glasses-1052010_1280 (4).jpg": "/e-learning/static/media/glasses-1052010_1280 (4).8889c343dfcd19e35e8a.jpg",
+    "index.html": "/e-learning/index.html",
+    "main.8cfce32a.css.map": "/e-learning/static/css/main.8cfce32a.css.map",
+    "main.13d70aee.js.map": "/e-learning/static/js/main.13d70aee.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8cfce32a.css",
+    "static/js/main.13d70aee.js"
+  ]
+}
