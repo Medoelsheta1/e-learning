@@ -1,38 +1,365 @@
-.App {
-  text-align: center;
+:root {
+    --alt-color: #d7d3d3;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
+.landing {
+    height: 100vh;
+    color: white;
+    width: 100%;
+}
+.landing img {
+    width: 500px;
+    height: 500px;
+}
+.navpar {
+    font-weight: bold;
+    font-size: 25px;
+    border-bottom: 2px solid #eeeeee50;
+}
+.links {
+    margin-bottom: -5px;
+    height: 60px;
+}
+.links p {
+    margin-right: 30px;
+    cursor: pointer;
+    transition: 0.3s;
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+}
+.links p:hover {
+    border-bottom: 4px solid red;
+}
+.navpar {
+    padding: 25px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.icons {
+    margin-bottom: 5px;
+}
+.icons svg {
+    cursor: pointer;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+.icons svg:hover {
+    color: red;
+}
+.imagesHandlers {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.imagesHandlers span {
+    width: 43px;
+    cursor: pointer;
+    height: 5px;
+    background-color: grey;
+    display: inline-block;
+    margin: 5px;
+}
+/* .carousel-indicators {
+    z-index: 20!important;
+    bottom: -20px!important;
+  } */
+  .carousel-indicators li {
+    background-color: blue!important;
+    width: 50px;
+    margin: 5px;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .carousel-indicators li::marker {
+    font-size: 0;
   }
-  to {
-    transform: rotate(360deg);
-  }
+.landing .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -5;
+}
+.landingContent {
+    height: 70vh;
+    justify-content: center;
+    align-items: end;
+    padding-right: 160px;
+    font-weight: bold;
+}
+.landingContent > div {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.landingContent p {
+    color: var(--alt-color);
+    font-size: 20px;
+} 
+
+.navpar .logo {
+    cursor: pointer;
+}
+.layout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #00000061;
+    z-index: -3;
+    width: 100%;
+    height: 100%;
+}
+@media(max-width: 1200px){
+    .landingContent {
+        padding-right: 100px;
+    }
+    .navpar {
+        padding: 25px;
+    }
+}
+
+@media(max-width: 992px) {
+    .navpar {
+        padding: 20px!important;
+    }
+    .landingContent {
+        padding: 60px!important;
+    }
+}
+@media(max-width: 768px) {
+    .navpar {
+        padding: 20px 10px!important;
+    }
+    .navparContent {
+        margin-left: 10px!important;
+    }
+}
+@media(max-width: 545px) {
+    .navparContent {
+        font-size: 14px;
+        height: 40px;
+        margin-left: 10px!important;
+    }
+    .landingContent {
+        padding: 25px!important;
+    }
+}
+@media(max-width: 375px) {
+    .navparContent {
+        font-size: 14px;
+        height: 40px;
+        margin-left: 10px!important;
+    }
+    .landingContent {
+        padding: 25px!important;
+    }
+    .navparContent .icons {
+        margin-left: 19px;
+    }
+    .links p {
+        margin-right: 10px;
+    }
+    .navparContent {
+        font-size: 12px;
+    }
+    .landingContent > div {
+        font-size: 16px;
+    }
+    .landingContent p {
+        font-size: 16px;
+    } 
+}
+
+.suggestion {
+    padding-top: 40px;
+    padding-bottom: 50px;
+    background-color: black;
+}
+.suggestionLinks p {
+    cursor: pointer;
+    color: var(--alt-color);
+    transition: 0.3s;
+    border-bottom: 0px solid;
+    height: 40px;
+}
+.suggestionLinks p:hover,
+.suggestionLinks p.active {
+    color: white;
+    border-bottom: 4px solid red;
+}
+.suggestionButtons button,
+.coursesButtons button{
+    padding: 5px 15px;
+    background-color: #454343;
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border: none;
+    transition: 0.3s;
+}
+.suggestionButtons button.active,
+.suggestionButtons button:hover,
+.coursesButtons button:hover,
+.coursesButtons button.active {
+    background-color: red;
+}
+.suggestionContent {
+    padding-top: 35px;
+}
+.suggestionCard {
+    position: relative;
+}
+.suggestionCard p {
+    color: white;
+    padding: 3px;
+    display: flex;
+    justify-content: end;
+}
+.suggestionCard .cardRate {
+    color: var(--alt-color);
+}
+.suggestionCard .cardDetails {
+    padding-right: 3px;
+}
+.suggestionCard .cardDetails .gold {
+    color: gold;
+}
+
+.suggestionCard .cardLayout {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000087;
+    display: none;
+    
+    transition: 0.3s;
+}
+.suggestionCard .cardLayout p {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    cursor: pointer;
+    transform: translate(-50% , -50%);
+}
+.suggestionCard:hover .cardLayout {
+    display: block;
+}
+.suggestionContent img {
+    width: 180px;
+height: 270px;
+}
+.suggestionContent {
+    min-height: 370px;
+}
+/*  */
+.courses {
+    padding-top: 20px;
+    padding-bottom: 40px;
+    background-color: black;
+}
+.coursesTitle .search input {
+    padding: 5px 10px;
+    background-color: black;
+    border-radius: 7px;
+}
+.coursesTitle h4 {
+    cursor: pointer;
+}
+.coursesContent {
+    margin-top: 40px;
+    flex-wrap: wrap;
+    min-height: 500px;
+}
+.coursesContent > div {
+    margin: 10px;
+}
+.courseDetails {
+    position: fixed;
+    top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    height: 70vh;
+    width: 95%;
+    z-index: 10;
+    border-radius: 12px;
+}
+.courseDetails img {
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;    
+    z-index: -1;
+    border-radius: 10px;
+
+}
+.detailsLayout {
+    position: absolute;
+    bottom: 0;
+    background-color: #0000006e;
+    width: 100%;
+    height: 25%;
+    z-index: -1;
+}
+.courseDetails .exit {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    color: var(--alt-color);
+    font-size: 25px;
+    /* background-color: white; */
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.courseDetails .itemText {
+    position: absolute;
+    top: 43%;
+    right: 0;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    float: right;
+    justify-content: flex-end;
+
+    align-items: end;
+}
+.courseDetails .itemText > div {
+    display: flex;
+}
+.courseDetails .itemText p {
+    color: var(--alt-color);
+}
+
+.courseDetails .detailsLinks button {
+    background-color: transparent;
+    color: white;
+    margin: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #eeeeee6b;
+    transition: 0.3s;
+}
+.courseDetails .detailsLinks button:hover {
+    color: red;
+}
+@media(max-width: 495px) {
+    .courseDetails .itemText {
+        top: 38%;
+    }
+}
+@media(max-width: 350px) {
+    .courseDetails .itemText {
+        top: 37%;
+    }
 }
